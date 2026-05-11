@@ -1,22 +1,82 @@
-//background header/footer & pages
+
+// =============================================
+// COULEURS BACKGROUND
+// =============================================
+
+//background header/footer
 $hf-bg-color: #222222;
-$bg-color: #EDE0D4;
 
-//accentuation 
-$imp-color: #8B1E2D;
-
-//boutons, liens, détails
-$btn-link-color: #A47551;
+//background pages
+$bg-color: #ede0d4;
 
 //background card
-$bg-card: #FFFFFF;
+$bg-card: #ffffff;
 
-//bordures/séparateurs
-$border: #C8BAA8;
+
+// =============================================
+// COULEURS POLICE
+// =============================================
 
 //texte principal color / font
-$primary-txt-color: #2C2C2A;
-$primary-font: none;
+$primary-txt-color: #2c2c2a;
 
 //texte secondaire
-$secondary-txt-color: #6B6B68; 
+$secondary-txt-color: #6b6b68;
+
+//accentuation
+$imp-color: #8b1e2d;
+
+// =============================================
+// POLICES
+// =============================================
+
+// Titres, accroches
+$font-title: "Potta One", cursive;
+
+// Texte courant, navigation, boutons
+$font-body: "Poppins", sans-serif;
+
+// Touches décoratives coréennes
+$font-deco: "Gaegu", cursive;
+
+
+// =============================================
+// HOVER
+// =============================================
+
+// Rouge coréen hover
+$imp-color-hover: #6B1622;
+
+// Cuivre hover
+$btn-link-color-hover: #85593A;
+
+
+// =============================================
+// AUTRES
+// =============================================
+
+//boutons, liens, détails
+$btn-link-color: #a47551;
+
+//bordures/séparateurs
+$border: #c8baa8;
+
+// =============================================
+// ESPACEMENTS
+// =============================================
+
+// Marges latérales
+$padding-mobile: 1.8rem;
+$padding-desktop: 8rem;
+
+// Espacement entre les sections
+$section-gap: 2.4rem;
+
+// Espacement entre les éléments
+$element-gap: 1.4rem;
+
+// Coins arrondis
+$border-radius: 1rem;
+$border-radius-btn: 0.8rem;
+$border-radius-pill: 2rem;
+// 1rem=10px
