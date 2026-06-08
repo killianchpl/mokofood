@@ -1,0 +1,37 @@
+footer {
+  background: $hf-bg-color;
+  text-align: center;
+  padding: $padding-mobile;
+}
+
+.footer-logo {
+  color: $btn-link-color;
+  font-family: $font-title;
+  font-size: $font-size-md;
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  color: $secondary-txt-color;
+  font-size: $font-size-sm;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: $secondary-txt-color;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: $btn-link-color;
+  font-size: $font-size-lg;
+  margin: 0 1rem;
+}
+
+footer span {
+  color: $secondary-txt-color;
+  font-size: $font-size-xs;
+}

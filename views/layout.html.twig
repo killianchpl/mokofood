@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Moko Food" />
+    <meta name="description"
+      content="Moko Food, restaurant coréen à Saint-Brieuc, vous fait découvrir les saveurs authentiques de la Corée : barbecue coréen, bibimbap, poulet frit coréen et spécialités asiatiques dans une ambiance chaleureuse et conviviale." />
+    <meta name="keywords"
+      content="restaurant coréen Saint-Brieuc, cuisine coréenne Saint-Brieuc, barbecue coréen, bibimbap, poulet frit coréen, restaurant asiatique Saint-Brieuc, spécialités coréennes, restaurant centre-ville Saint-Brieuc, tteokbokki, japchae, korean food Bretagne, restaurant coréen Bretagne, cuisine asiatique authentique, manger coréen Saint-Brieuc, Moko Food Saint-Brieuc" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="French" />
+    <meta name="revisit-after" content="5 days" />
+    <meta name="author" content="Killian" />
+    <title>
+      {% block title %}
+        Moko Food
+      {% endblock %}
+    </title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="{{ base_path }}public/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index.php" class="logo">
+          <img src="{{ base_path }}public/images/logomoko.svg"
+            alt="Logo du restaurant Moko Food" />
+          <span class="logo-text">Moko Food</span>
+        </a>
+
+        <button class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.php">Accueil</a></li>
+          <li><a href="index.php?route=histoire">Notre Histoire</a></li>
+          <li><a href="index.php?route=carte">La carte</a></li>
+          <li><a href="index.php?route=reservation">Réservation</a></li>
+          <li><a href="index.php?route=avis">Avis</a></li>
+          <li><a href="index.php?route=contact">Contact</a></li>
+        </ul>
+        <a href="index.php?route=reservation" class="btn-reserve">Réserver</a>
+      </nav>
+    </header>
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+    <footer>
+      <p class="footer-logo">
+        모코 MOKO FOOD
+      </p>
+      <p class="footer-txt">
+        Restaurant coréen — Saint-Brieuc
+      </p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/mokofoodcuisinecoreenne/?locale=fr_FR"
+          target="_blank"
+          aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/mokofood/?hl=fr"
+          target="_blank"
+          aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <p>
+        <a href="index.php?route=mentions-legales">Mentions légales</a> · Politique
+        de confidentialité · © 2025 Moko Food
+      </p>
+    </footer>
+    <script src="{{ base_path }}public/js/burger.js"></script>
+    {% block javascripts %}
+    {% endblock %}
+  </body>
+</html>

@@ -14,9 +14,16 @@
 html {
   font-size: 62.5%;
 }
-//reset taille du texte body
+//reset taille du texte body + footer bas de page column+min-height+ flex sur main
 body {
   font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $bg-color;
+}
+main {
+  flex: 1;
 }
 
 //reset img

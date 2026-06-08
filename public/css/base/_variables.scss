@@ -1,4 +1,3 @@
-
 // =============================================
 // COULEURS BACKGROUND
 // =============================================
@@ -11,7 +10,6 @@ $bg-color: #ede0d4;
 
 //background card
 $bg-card: #ffffff;
-
 
 // =============================================
 // COULEURS POLICE
@@ -39,27 +37,51 @@ $font-body: "Poppins", sans-serif;
 // Touches décoratives coréennes
 $font-deco: "Gaegu", cursive;
 
+// =============================================
+// TAILLES DE POLICE
+// =============================================
+
+$font-size-xs: 1.2rem;
+$font-size-sm: 1.4rem;
+$font-size-base: 1.6rem;
+$font-size-md: 1.8rem;
+$font-size-lg: 2rem;
+$font-size-xl: 2.4rem;
+
+// =============================================
+// spacing-letter
+// =============================================
+
+$letter-spacing: 0.2rem;
 
 // =============================================
 // HOVER
 // =============================================
 
 // Rouge coréen hover
-$imp-color-hover: #6B1622;
+$imp-color-hover: #6b1622;
 
 // Cuivre hover
-$btn-link-color-hover: #85593A;
+$btn-link-color-hover: #85593a;
 
+// Noir charbon hover
+$hf-bg-color-hover: #111111;
 
 // =============================================
 // AUTRES
 // =============================================
 
 //boutons, liens, détails
+$burger-imp: #a47551;
+
+//boutons, liens, détails
 $btn-link-color: #a47551;
 
 //bordures/séparateurs
 $border: #c8baa8;
+
+// Fond des formulaires (même couleur que $border)
+$bg-form: #c8baa8;
 
 // =============================================
 // ESPACEMENTS
@@ -80,3 +102,9 @@ $border-radius: 1rem;
 $border-radius-btn: 0.8rem;
 $border-radius-pill: 2rem;
 // 1rem=10px
+
+// =============================================
+// TRANSITIONS
+// =============================================
+
+$transition: 0.2s ease;

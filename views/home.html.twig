@@ -1,11 +1,127 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Moko Food — Accueil</title>
-</head>
-<body>
-    <h1>Bienvenue chez Moko Food</h1>
-    <p>Le site fonctionne !</p>
-</body>
-</html>
+{# héritage layout pour la page d'accueil #}
+{% extends 'layout.html.twig' %}
+
+{# Titre de la page #}
+{% block title %}
+  Moko Food — Accueil
+{% endblock %}
+
+{# Contenu de la page #}
+{% block content %}
+  {# Section Hero #}
+  <section class="hero">
+    <img src="{{ base_path }}public/images/mokohero.webp"
+      alt="Photo du restaurant Moko Food, intérieur du restaurant qui montre la vitrine, des tables et les barbecues coréens sur les tables. " />
+    <div class="hero-content">
+      <span class="hero-subtitle">RESTAURANT CORÉEN</span>
+      <h1>
+        Bienvenue chez Moko Food
+      </h1>
+      <p>
+        Une expérience culinaire authentique au cœur de Saint-Brieuc.
+      </p>
+      <div class="hero-buttons">
+        <a href="index.php?route=reservation" class="btn-primary">
+          Réserver une table
+        </a>
+        <a href="index.php?route=carte" class="btn-secondary">
+          Découvrir la carte
+        </a>
+      </div>
+    </div>
+  </section>
+  {# Section Specialités #}
+  <section class="specialites">
+    <h2>
+      Nos spécialités
+    </h2>
+    <div class="cards">
+      {% for plat in plats %}
+        <div class="card">
+          <img src="{{ base_path }}public/images/{{ plat.photo }}"
+            alt="{{ plat.nom }}" />
+          <h3>
+            {{ plat.nom }}
+          </h3>
+          <p>
+            {{ plat.description }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+    <a href="index.php?route=carte">Voir toute la carte</a>
+  </section>
+
+  {# Section Avis #}
+  <section class="avis-home">
+    <h2>
+      Avis
+    </h2>
+    <div class="avis-card">
+      <div class="avis-stars">
+        {% for i in 1..avis.note %}
+          <i class="fa-solid fa-star"></i>
+        {% endfor %}
+      </div>
+      <p class="avis-text">
+        {{ avis.commentaire }}
+      </p>
+      <p class="avis-author">
+        — {{ avis.nom }}
+      </p>
+    </div>
+    <a href="index.php?route=avis">Voir tous les avis</a>
+  </section>
+
+  {# Section Nous trouver #}
+  <section class="infos-home">
+    <h2>
+      Nous trouver
+    </h2>
+    <div class="infos-content">
+      <div class="infos-card">
+        <div class="infos-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>
+            6 rue Fardel, 22000 Saint-Brieuc
+          </p>
+        </div>
+        <div class="infos-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <p>
+              Mar — 12h à 14h / 19h à 21h30
+            </p>
+            <p>
+              Mer — 12h à 14h / 19h à 22h
+            </p>
+            <p>
+              Jeu — 12h à 14h / 19h à 21h30
+            </p>
+            <p>
+              Ven — 12h à 14h / 19h à 22h30
+            </p>
+            <p>
+              Sam — 12h à 14h / 19h à 22h30
+            </p>
+            <p>
+              Dim - Lun — Fermé
+            </p>
+          </div>
+        </div>
+        <div class="infos-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:0617160022">06 17 16 00 22</a>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1496.9992735103851!2d-2.7655353445890674!3d48.514485894122764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480e1d7f35a840a1%3A0xb55b856e609c1a69!2sMoko%20Food!5e1!3m2!1sfr!2sfr!4v1780262439140!5m2!1sfr!2sfr"
+          width="100%"
+          height="250"
+          style="border:0; border-radius: 1rem;"
+          allowfullscreen=""
+          loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+{% endblock %}

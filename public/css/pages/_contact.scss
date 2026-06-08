@@ -1,0 +1,166 @@
+// ==========================================================================
+//  PAGE CONTACT
+// ==========================================================================
+
+// ----------------------------- MOBILE FIRST -----------------------------
+
+.contact {
+  background-color: $bg-color;
+  padding: $padding-mobile;
+}
+
+.contact-title {
+  font-family: $font-title;
+  color: $primary-txt-color;
+  font-size: 3rem;
+  margin-bottom: $section-gap;
+}
+
+// Les deux blocs (infos / formulaire) empilés en mobile
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: $section-gap;
+}
+
+// Titres "Nous trouver" et "Formulaire" (barre rouge)
+.contact-infos h2,
+.contact-form-block h2 {
+  @include title-accent;
+  font-family: $font-title;
+  color: $primary-txt-color;
+  margin-bottom: $element-gap;
+}
+
+// Colonne infos : carte (.infos-card, stylée globalement) + map empilées
+.contact-infos {
+  display: flex;
+  flex-direction: column;
+  gap: $element-gap;
+
+  .map-container iframe {
+    width: 100%;
+    border-radius: $border-radius;
+  }
+}
+
+// ------------------------------ FORMULAIRE ------------------------------
+
+.contact-form {
+  background-color: $bg-card;
+  border-radius: $border-radius;
+  padding: 2.5rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.06);
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.6rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-family: $font-body;
+    color: $primary-txt-color;
+    margin-bottom: 0.6rem;
+  }
+
+  input,
+  textarea {
+    font-family: $font-body;
+    font-size: 1.6rem;
+    color: $primary-txt-color;
+    background-color: $bg-color;
+    border: 0.1rem solid $border;
+    border-radius: $border-radius;
+    padding: 1.2rem;
+    width: 100%;
+
+    &::placeholder {
+      color: $secondary-txt-color;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $imp-color;
+    }
+  }
+
+  textarea {
+    min-height: 12rem;
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    @include btn-primary;
+    width: 100%;
+  }
+}
+
+// --------------------------- MESSAGES (erreurs / succès) ---------------------------
+
+.form-success {
+  font-family: $font-body;
+  background-color: #e6f4ea;
+  color: #1e7e34;
+  border: 0.1rem solid #1e7e34;
+  border-radius: $border-radius;
+  padding: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.form-errors {
+  font-family: $font-body;
+  background-color: #fdecea;
+  color: $imp-color;
+  border: 0.1rem solid $imp-color;
+  border-radius: $border-radius;
+  padding: 1.2rem 1.2rem 1.2rem 3rem;
+  margin-bottom: 1.6rem;
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+// ------------------------------- DESKTOP -------------------------------
+
+@include desktop {
+  .contact {
+    padding: 4rem $padding-desktop;
+  }
+
+  // On limite la largeur sur très grand écran et on centre
+  .contact > * {
+    max-width: 130rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-title {
+    font-size: 4rem;
+  }
+
+  // Deux colonnes côte à côte
+  .contact-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 6rem;
+  }
+
+  .contact-infos,
+  .contact-form-block {
+    flex: 1;
+  }
+
+  .contact-infos .map-container iframe {
+    height: 30rem;
+  }
+
+  // Bouton centré (pas pleine largeur) en desktop
+  .contact-form button[type="submit"] {
+    width: auto;
+    align-self: center;
+  }
+}

@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  Moko Food — La carte
+{% endblock %}
+
+{% block content %}
+  <section class="carte">
+    <h1 class="carte-title">
+      Notre carte
+    </h1>
+
+    {# Pilules de filtre #}
+    <div class="filtres">
+      <button class="filtre is-active" data-categorie="all">Tous</button>
+      {% for categorie in categories %}
+        <button class="filtre" data-categorie="{{ categorie.id }}">
+          {{ categorie.nom }}
+        </button>
+      {% endfor %}
+    </div>
+
+    {# Une section par catégorie #}
+    {% for categorie in categories %}
+      <section class="carte-categorie" data-categorie="{{ categorie.id }}">
+        <h2>
+          {{ categorie.nom }}
+        </h2>
+        <div class="plats">
+          {% for plat in plats %}
+            {% if plat.categorie_id == categorie.id %}
+              <article class="plat">
+                <img src="{{ base_path }}public/images/{{ plat.photo }}"
+                  alt="{{ plat.nom }}" />
+                <div class="plat-infos">
+                  <div class="plat-text">
+                    <h3>
+                      {{ plat.nom }}
+                    </h3>
+                    <p class="plat-desc">
+                      {{ plat.description }}
+                    </p>
+                  </div>
+                  <p class="plat-prix">
+                    {{ plat.prix }} €
+                  </p>
+                </div>
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </section>
+
+  <div class="lightbox-backdrop"></div>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ base_path }}public/js/carte.js"></script>
+{% endblock %}

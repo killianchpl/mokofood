@@ -1,0 +1,138 @@
+{# héritage layout pour la page Contact #}
+{% extends 'layout.html.twig' %}
+
+{# Titre de la page #}
+{% block title %}
+  Moko Food — Contact
+{% endblock %}
+
+{# Contenu de la page #}
+{% block content %}
+  <section class="contact">
+    <h1 class="contact-title">
+      Nous contacter
+    </h1>
+
+    <div class="contact-content">
+      {# Colonne gauche : infos pratiques + carte #}
+      <div class="contact-infos">
+        <h2>
+          Nous trouver
+        </h2>
+        <div class="infos-card">
+          <div class="infos-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>
+              6 rue Fardel, 22000 Saint-Brieuc
+            </p>
+          </div>
+          <div class="infos-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <p>
+                Mar — 12h à 14h / 19h à 21h30
+              </p>
+              <p>
+                Mer — 12h à 14h / 19h à 22h
+              </p>
+              <p>
+                Jeu — 12h à 14h / 19h à 21h30
+              </p>
+              <p>
+                Ven — 12h à 14h / 19h à 22h30
+              </p>
+              <p>
+                Sam — 12h à 14h / 19h à 22h30
+              </p>
+              <p>
+                Dim - Lun — Fermé
+              </p>
+            </div>
+          </div>
+          <div class="infos-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:0617160022">06 17 16 00 22</a>
+          </div>
+        </div>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1496.9992735103851!2d-2.7655353445890674!3d48.514485894122764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480e1d7f35a840a1%3A0xb55b856e609c1a69!2sMoko%20Food!5e1!3m2!1sfr!2sfr!4v1780262439140!5m2!1sfr!2sfr"
+            width="100%"
+            height="250"
+            style="border:0; border-radius: 1rem;"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
+      </div>
+
+      {# Colonne droite : formulaire #}
+      <div class="contact-form-block">
+        <h2>
+          Formulaire
+        </h2>
+
+        {% if success %}
+          <p class="form-success">
+            Votre message a bien été envoyé. Merci, nous vous répondrons
+            rapidement !
+          </p>
+        {% endif %}
+
+        {% if errors is not empty %}
+          <ul class="form-errors">
+            {% for error in errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        
+        
+        <form class="contact-form"
+          method="post"
+          action="index.php?route=contact">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+
+          <fieldset>
+            <label for="nom">Nom</label>
+            <input type="text"
+              id="nom"
+              name="nom"
+              value="{{ old.nom|default('') }}"
+              placeholder="Dupont" />
+          </fieldset>
+
+          <fieldset>
+            <label for="prenom">Prénom</label>
+            <input type="text"
+              id="prenom"
+              name="prenom"
+              value="{{ old.prenom|default('') }}"
+              placeholder="Jean" />
+          </fieldset>
+
+          <fieldset>
+            <label for="email">Email</label>
+            <input type="email"
+              id="email"
+              name="email"
+              value="{{ old.email|default('') }}"
+              placeholder="jean.dupont@exemple.fr" />
+          </fieldset>
+
+          <fieldset>
+            <label for="message">Message</label>
+            <textarea id="message"
+              name="message"
+              placeholder="Votre message...">
+              {{- old.message|default('') -}}
+            </textarea>
+          </fieldset>
+
+          <fieldset>
+            <button type="submit">Envoyer</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,198 @@
+// =============================================
+// CARTE — Mobile
+// =============================================
+
+.carte {
+  padding: 3rem $padding-mobile;
+}
+
+.carte-title {
+  font-family: $font-title;
+  font-size: $font-size-xl;
+  color: $primary-txt-color;
+  text-align: center;
+  margin-bottom: $section-gap;
+}
+
+// ---------- Pilules de filtre ----------
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: $section-gap;
+}
+
+.filtre {
+  padding: 0.8rem 2rem;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $primary-txt-color;
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $border-radius-pill;
+  cursor: pointer;
+  transition: background-color $transition, color $transition;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  &:hover {
+    background: $bg-color;
+  }
+
+  &.is-active {
+    background: $imp-color;
+    border-color: $imp-color;
+    color: $bg-card;
+  }
+}
+
+// ---------- Sections par catégorie ----------
+.carte-categorie {
+  margin-bottom: $section-gap;
+}
+
+.carte-categorie h2 {
+  @include title-accent;
+  font-family: $font-title;
+  font-size: $font-size-lg;
+  color: $primary-txt-color;
+  margin-bottom: $section-gap;
+}
+
+// section masquée par le filtre JS
+.carte-categorie.is-hidden {
+  display: none;
+}
+
+// ---------- Liste de plats ----------
+.plats {
+  display: flex;
+  flex-direction: column;
+  gap: $element-gap;
+}
+
+.plat {
+  display: flex;
+  gap: 1.5rem;
+  background: $bg-card;
+  border-radius: $border-radius;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.plat img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: $border-radius;
+  background: $border;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+//aperçu agrandi au clic
+.lightbox-backdrop {
+  display: none;
+}
+
+.lightbox-backdrop.is-open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.plat img.is-zoomed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: $border-radius;
+  z-index: 1001;
+}
+
+.plat-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.plat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.plat-text h3 {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: $font-size-md;
+  color: $primary-txt-color;
+}
+
+.plat-desc {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $secondary-txt-color;
+}
+
+.plat-prix {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: $font-size-md;
+  color: $btn-link-color;
+  flex-shrink: 0;
+}
+
+// =============================================
+// CARTE — Desktop
+// =============================================
+
+@include desktop {
+  .carte {
+    padding: 4rem $padding-desktop;
+  }
+
+  // on cale le contenu sur une largeur max et centré (comme la home)
+  .carte > * {
+    max-width: 130rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carte-title {
+    font-size: 4rem;
+  }
+
+  // fiches sur 2 colonnes
+  .plats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $element-gap;
+  }
+
+  // prix poussé à droite du texte
+  .plat-infos {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .plat img {
+    width: 12rem;
+    height: 12rem;
+  }
+}

@@ -4,6 +4,8 @@
 
 //insertion des variables scss
 @import "base/variables";
+//insertions des mixins
+@import "base/mixins";
 //insertion des fonts(polices)
 @import "base/fonts";
 //insertion du reset
@@ -13,9 +15,30 @@
 // IMPORT HEADER & FOOTER
 // =============================================
 
-
+@import "layout/header";
+@import "layout/footer";
 
 // =============================================
 // IMPORT BUTTONS
 // =============================================
 
+@import "components/buttons";
+
+// =============================================
+// IMPORT cartes + formulaire
+// =============================================
+
+@import "components/cards";
+@import "components/forms";
+
+// =============================================
+// IMPORT PAGES
+// =============================================
+
+@import "pages/home";
+@import "pages/histoire";
+@import "pages/carte";
+@import "pages/reservation";
+@import "pages/contact";
+@import "pages/avis";
+@import "pages/mentions";

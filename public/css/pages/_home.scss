@@ -1,0 +1,410 @@
+// =============================================
+// HOME — Hero Mobile
+// =============================================
+
+.hero {
+  background: $hf-bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem $padding-mobile;
+}
+
+.hero img {
+  width: 95%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: $border-radius;
+  margin-bottom: $section-gap;
+}
+
+.hero-subtitle {
+  color: $btn-link-color;
+  font-family: $font-body;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  color: $bg-card;
+  font-family: $font-title;
+  font-size: $font-size-xl;
+  margin-bottom: 1.4rem;
+}
+
+.hero p {
+  color: $secondary-txt-color;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  margin-bottom: 3.2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: $font-size-md;
+  align-items: center;
+}
+
+.hero .btn-primary {
+  @include btn-primary;
+}
+
+.hero .btn-secondary {
+  @include btn-secondary;
+}
+
+// =============================================
+// HOME — Spécialités Mobile
+// =============================================
+
+.specialites {
+  background: $bg-color;
+  padding: 3rem $padding-mobile;
+}
+
+.specialites h2 {
+  @include title-accent;
+  font-family: $font-title;
+  font-size: $font-size-lg;
+  color: $primary-txt-color;
+  margin-bottom: $section-gap;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $element-gap;
+  margin-bottom: $section-gap;
+}
+
+.card {
+  background: $bg-card;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: $border;
+}
+
+.card h3 {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $primary-txt-color;
+  padding: 1rem 1rem 0.4rem;
+}
+
+.card p {
+  font-family: $font-body;
+  font-size: $font-size-xs;
+  color: $secondary-txt-color;
+  padding: 0 1rem 1rem;
+}
+
+.specialites > a {
+  display: block;
+  text-align: center;
+  color: $btn-link-color;
+  font-family: $font-body;
+  font-size: 1.4rem;
+  transition: $transition;
+
+  &:hover {
+    color: $btn-link-color-hover;
+  }
+}
+
+// =============================================
+// HOME — Avis Mobile
+// =============================================
+
+.avis-home {
+  background: $bg-color;
+  padding: 3rem $padding-mobile;
+}
+
+.avis-home h2 {
+  @include title-accent;
+  font-family: $font-title;
+  font-size: $font-size-xl;
+  color: $primary-txt-color;
+  margin-bottom: $section-gap;
+}
+
+.avis-card {
+  background: $bg-card;
+  border-radius: $border-radius;
+  padding: 2rem;
+  margin-bottom: $section-gap;
+}
+
+.avis-stars {
+  color: $btn-link-color;
+  font-size: $font-size-sm;
+  margin-bottom: 1rem;
+}
+
+.avis-text {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $primary-txt-color;
+  margin-bottom: 1rem;
+}
+
+.avis-author {
+  font-family: $font-body;
+  font-size: $font-size-xs;
+  color: $secondary-txt-color;
+}
+
+.avis-home > a {
+  display: block;
+  text-align: center;
+  color: $btn-link-color;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  transition: $transition;
+
+  &:hover {
+    color: $btn-link-color-hover;
+  }
+}
+
+// =============================================
+// HOME — Nous trouver Mobile
+// =============================================
+
+.infos-home {
+  background: $bg-color;
+  padding: 3rem $padding-mobile;
+}
+
+.infos-home h2 {
+  @include title-accent;
+  font-family: $font-title;
+  font-size: $font-size-lg;
+  color: $primary-txt-color;
+  margin-bottom: $section-gap;
+}
+
+.infos-card {
+  background: $bg-card;
+  border-radius: $border-radius;
+  padding: 2rem;
+  margin-bottom: $section-gap;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.06);
+}
+
+.infos-item {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.infos-item i {
+  color: $btn-link-color;
+  font-size: $font-size-md;
+  flex-shrink: 0;
+}
+
+.infos-item p {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $primary-txt-color;
+}
+
+.infos-item div p {
+  line-height: 1.8;
+}
+
+.infos-item a {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $btn-link-color;
+  transition: color $transition;
+
+  &:hover {
+    color: $btn-link-color-hover;
+  }
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+}
+
+// HOME — Autres
+
+.specialites > *,
+.avis-home > *,
+.infos-home > * {
+  max-width: 130rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// =============================================
+// =============================================
+// RESPONSIVE DESKTOP
+// =============================================
+// =============================================
+
+// =============================================
+// HOME — Hero Desktop
+// =============================================
+
+// ---------- Hero ----------
+@include desktop {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: left;
+    gap: 8rem;
+    padding: 6rem 4rem;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 45rem;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-subtitle {
+    display: block;
+    font-size: $font-size-lg;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero p {
+    font-size: $font-size-md;
+    margin-bottom: 4rem;
+  }
+
+  .hero img {
+    order: 1;
+    flex: 1.4;
+    min-width: 0;
+    max-width: 70rem;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    border-radius: $border-radius;
+    margin-bottom: 0;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+  }
+
+  .hero-buttons a {
+    white-space: nowrap;
+  }
+
+  // ---------- Spécialités ----------
+  .specialites {
+    padding: 4rem $padding-desktop;
+  }
+
+  .specialites h2 {
+    font-size: $font-size-xl;
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .specialites > a {
+    font-size: $font-size-lg;
+    font-weight: 500;
+  }
+
+  // ---------- Avis ----------
+  .avis-home {
+    padding: 4rem $padding-desktop;
+  }
+
+  .avis-home h2 {
+    font-size: $font-size-xl;
+  }
+
+  .avis-card {
+    max-width: 130rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .avis-home > a {
+    font-size: $font-size-lg;
+    font-weight: 500;
+  }
+
+  // ---------- Nous trouver ----------
+  .infos-home {
+    padding: 4rem $padding-desktop;
+  }
+
+  .infos-home h2 {
+    font-size: $font-size-xl;
+  }
+
+  .infos-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .infos-card {
+    flex-shrink: 0;
+    margin-bottom: 0;
+    padding: 3rem;
+  }
+
+  .infos-item {
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .infos-item i {
+    font-size: $font-size-lg;
+  }
+
+  .infos-item p,
+  .infos-item a {
+    font-size: $font-size-md;
+  }
+
+  .infos-item div p {
+    line-height: 2;
+  }
+
+  .map-container {
+    margin-bottom: 0;
+  }
+
+  .map-container iframe {
+    width: 60rem;
+    max-width: 100%;
+    min-height: 45rem;
+  }
+}
